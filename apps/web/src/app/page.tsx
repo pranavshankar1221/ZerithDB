@@ -11,12 +11,16 @@ import {
   CheckCircle,
   Terminal,
   FileCode,
+  Star,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import CodeWalkthrough from "@/components/CodeWalkthrough";
 import TerminalShowcase from "@/components/TerminalShowcase";
 import AnimatedDiagram from "@/components/AnimatedDiagram";
 import FrameworkSection from "@/components/FrameworkSection";
+import VisualShowcase from "@/components/VisualShowcase";
+import ProjectShowcase from "@/components/ProjectShowcase";
+import Footer from "@/components/Footer";
 
 export default function LandingPage() {
   const fadeInUp = {
@@ -107,7 +111,6 @@ export default function LandingPage() {
 
       {/* ── 1. HERO SECTION ── */}
       <section className="relative pt-32 pb-20 px-6 max-w-6xl mx-auto text-center">
-        {/* Background Decorations */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none overflow-visible">
           <motion.div
             animate={{
@@ -126,6 +129,7 @@ export default function LandingPage() {
             className="absolute top-40 -right-20 w-80 h-80 bg-indigo-100 rounded-full blur-3xl"
           />
         </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -207,7 +211,23 @@ export default function LandingPage() {
         >
           <TerminalShowcase />
         </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="mt-12 flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400"
+        >
+          <span className="flex items-center gap-2">Powered by <span className="text-gray-600">Yjs</span></span>
+          <span className="w-1 h-1 bg-gray-200 rounded-full my-auto" />
+          <span className="text-gray-600">IndexedDB</span>
+          <span className="w-1 h-1 bg-gray-200 rounded-full my-auto" />
+          <span className="text-gray-600">WebRTC</span>
+        </motion.div>
       </section>
+
+      {/* ── VISUAL SHOWCASE ── */}
+      <VisualShowcase />
 
       {/* ── 2. TRUST / SOCIAL PROOF ── */}
       <section className="py-10 border-y border-gray-100 bg-gray-50/50 overflow-hidden">
@@ -604,6 +624,9 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* ── PROJECT SHOWCASE ── */}
+      <ProjectShowcase />
+
       {/* ── 9. CTA SECTION ── */}
       <section
         id="get-started"
@@ -667,41 +690,7 @@ export default function LandingPage() {
       </section>
 
       {/* ── 9. FOOTER ── */}
-      <footer className="border-t border-gray-200 py-12 px-6 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <img src="/logo.svg" alt="ZerithDB Logo" className="w-full h-full" />
-            </div>
-            <span className="font-semibold text-gray-900 text-lg">ZerithDB</span>
-          </div>
-
-          <div className="flex items-center gap-6 text-sm text-gray-500 font-medium">
-            <Link href="/docs" className="hover:text-gray-900 transition-colors">
-              Documentation
-            </Link>
-            <a
-              href="https://github.com/Zerith-Labs/ZerithDB"
-              className="hover:text-gray-900 transition-colors"
-            >
-              GitHub
-            </a>
-            <Link href="/blog" className="hover:text-gray-900 transition-colors">
-              Blog
-            </Link>
-            <Link href="/pricing" className="hover:text-gray-900 transition-colors">
-              Pricing
-            </Link>
-            <a href="#" className="hover:text-gray-900 transition-colors">
-              Discord
-            </a>
-          </div>
-
-          <div className="text-sm text-gray-400">
-            © {new Date().getFullYear()} ZerithDB. Open Source.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
