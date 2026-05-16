@@ -1,5 +1,5 @@
 "use client";
-
+import SocialGraph from "../components/SocialGraph";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -691,6 +691,7 @@ export default function LandingPage() {
 
       {/* ── 9. FOOTER ── */}
       <Footer />
+      <SocialGraph />
     </main>
   );
 }
