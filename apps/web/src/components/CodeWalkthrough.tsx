@@ -97,9 +97,9 @@ export default function CodeWalkthrough() {
             </button>
           );
         })}
-        
+
         <div className="mt-auto pt-4 border-t border-gray-800">
-          <button 
+          <button
             onClick={handleRun}
             disabled={isRunning}
             className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white rounded-lg text-sm font-bold transition-all shadow-lg shadow-blue-600/20"
@@ -121,7 +121,7 @@ export default function CodeWalkthrough() {
           <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
           <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
         </div>
-        
+
         <div className="flex-1 overflow-auto">
           <pre className="text-sm font-mono text-gray-300 leading-relaxed mt-4">
             <code>
@@ -139,7 +139,7 @@ export default function CodeWalkthrough() {
 
         <AnimatePresence>
           {showOutput && (
-            <motion.div 
+            <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}

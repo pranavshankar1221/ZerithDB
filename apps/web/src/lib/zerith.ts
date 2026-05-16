@@ -1,7 +1,7 @@
 /**
  * ZerithDB SDK Integration
- * 
- * This file demonstrates how to initialize the ZerithDB client 
+ *
+ * This file demonstrates how to initialize the ZerithDB client
  * for a local-first, peer-to-peer web application.
  */
 
@@ -21,7 +21,7 @@ export const createClient = (config: any) => {
     },
     network: {
       on: (event: string, cb: any) => console.log(`Listening for ${event}`),
-    }
+    },
   };
 };
 
@@ -33,8 +33,8 @@ export const db = createClient({
   storage: "indexeddb",
   sync: {
     p2p: true,
-    signalingUrl: "wss://signal.zerith.dev"
-  }
+    signalingUrl: "wss://signal.zerith.dev",
+  },
 });
 
 // Auto-enable sync in browser

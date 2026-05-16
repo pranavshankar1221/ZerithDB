@@ -44,26 +44,28 @@ export default function VisualShowcase() {
               <div className="mt-6 flex gap-4">
                 {/* Window 1 */}
                 <div className="flex-1 bg-white rounded-xl shadow-sm border border-gray-200 p-4 relative overflow-hidden">
-                  <div className="text-[10px] font-bold text-gray-400 uppercase mb-3">Browser A</div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase mb-3">
+                    Browser A
+                  </div>
                   <div className="space-y-2">
                     {todos.map((t, i) => (
-                      <motion.div 
+                      <motion.div
                         initial={{ x: -10, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        key={i} 
+                        key={i}
                         className="p-2 bg-blue-50 text-blue-700 text-xs rounded border border-blue-100 flex justify-between"
                       >
                         {t}
                       </motion.div>
                     ))}
                     <div className="pt-2 border-t border-gray-50 flex gap-1">
-                      <input 
-                        className="flex-1 text-[10px] p-1 bg-gray-50 border border-gray-100 rounded outline-none" 
+                      <input
+                        className="flex-1 text-[10px] p-1 bg-gray-50 border border-gray-100 rounded outline-none"
                         placeholder="Add todo..."
                         value={todoText}
                         onChange={(e) => setTodoText(e.target.value)}
                         onKeyDown={(e) => {
-                          if (e.key === 'Enter' && todoText) {
+                          if (e.key === "Enter" && todoText) {
                             setTodos([...todos, todoText]);
                             setTodoText("");
                           }
@@ -80,19 +82,32 @@ export default function VisualShowcase() {
                     transition={{ repeat: Infinity, duration: 1.5 }}
                     className="text-blue-500"
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
                   </motion.div>
                 </div>
 
                 {/* Window 2 */}
                 <div className="flex-1 bg-white rounded-xl shadow-sm border border-gray-200 p-4 relative">
-                  <div className="text-[10px] font-bold text-gray-400 uppercase mb-3">Browser B</div>
+                  <div className="text-[10px] font-bold text-gray-400 uppercase mb-3">
+                    Browser B
+                  </div>
                   <div className="space-y-2">
                     {todos.map((t, i) => (
-                      <motion.div 
+                      <motion.div
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        key={i} 
+                        key={i}
                         className="p-2 bg-indigo-50 text-indigo-700 text-xs rounded border border-indigo-100"
                       >
                         {t}
@@ -101,15 +116,17 @@ export default function VisualShowcase() {
                   </div>
                   {/* Collaborative Cursor */}
                   <motion.div
-                    animate={{ 
+                    animate={{
                       x: cursorPos.x,
-                      y: cursorPos.y
+                      y: cursorPos.y,
                     }}
                     transition={{ type: "spring", stiffness: 100 }}
                     className="absolute z-20 text-blue-600 flex flex-col items-start pointer-events-none"
                   >
                     <MousePointer2 className="w-4 h-4 fill-current" />
-                    <span className="bg-blue-600 text-white text-[8px] px-1 rounded ml-3">User A</span>
+                    <span className="bg-blue-600 text-white text-[8px] px-1 rounded ml-3">
+                      User A
+                    </span>
                   </motion.div>
                 </div>
               </div>
@@ -144,27 +161,25 @@ export default function VisualShowcase() {
 
           {/* Text Content */}
           <div className="lg:pl-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
-              Collaborative by design.
-            </h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-6">Collaborative by design.</h3>
             <div className="space-y-6">
               {[
                 {
                   title: "Real-time Multi-user",
-                  desc: "Share state, cursors, and presence across browsers with zero backend code."
+                  desc: "Share state, cursors, and presence across browsers with zero backend code.",
                 },
                 {
                   title: "Deterministic Consistency",
-                  desc: "Powered by CRDTs, ensure every user sees the exact same state without merge conflicts."
+                  desc: "Powered by CRDTs, ensure every user sees the exact same state without merge conflicts.",
                 },
                 {
                   title: "Local-First Speed",
-                  desc: "0ms latency for all local interactions. The UI never waits for the network."
-                }
+                  desc: "0ms latency for all local interactions. The UI never waits for the network.",
+                },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mt-1">
-                    {i+1}
+                    {i + 1}
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">{item.title}</h4>

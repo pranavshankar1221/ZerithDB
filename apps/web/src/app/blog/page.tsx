@@ -8,7 +8,8 @@ import Footer from "@/components/Footer";
 const blogPosts = [
   {
     title: "Introducing ZerithDB: The Future of Local-First Apps",
-    excerpt: "Learn how ZerithDB is changing the way developers think about data persistence and synchronization.",
+    excerpt:
+      "Learn how ZerithDB is changing the way developers think about data persistence and synchronization.",
     date: "Oct 24, 2024",
     author: "Pranav Shankar",
     category: "Product",
@@ -22,11 +23,12 @@ const blogPosts = [
   },
   {
     title: "Building a Collaborative To-Do App in 5 Minutes",
-    excerpt: "A step-by-step guide to building your first real-time collaborative application with ZerithDB.",
+    excerpt:
+      "A step-by-step guide to building your first real-time collaborative application with ZerithDB.",
     date: "Oct 15, 2024",
     author: "Community",
     category: "Tutorial",
-  }
+  },
 ];
 
 export default function BlogPage() {
@@ -39,7 +41,10 @@ export default function BlogPage() {
             <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
             <span className="font-bold text-xl">ZerithDB</span>
           </Link>
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-black flex items-center gap-2">
+          <Link
+            href="/"
+            className="text-sm font-medium text-gray-600 hover:text-black flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
         </div>
@@ -54,7 +59,8 @@ export default function BlogPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Blog</h1>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-              Insights, updates, and tutorials from the team building the future of the local-first web.
+              Insights, updates, and tutorials from the team building the future of the local-first
+              web.
             </p>
           </motion.div>
 
@@ -80,9 +86,7 @@ export default function BlogPage() {
                     <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-600 transition-colors">
                       {post.title}
                     </h2>
-                    <p className="text-gray-500 text-lg leading-relaxed mb-6">
-                      {post.excerpt}
-                    </p>
+                    <p className="text-gray-500 text-lg leading-relaxed mb-6">{post.excerpt}</p>
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center">
                         <User className="w-4 h-4 text-gray-400" />

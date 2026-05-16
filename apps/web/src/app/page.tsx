@@ -130,7 +130,6 @@ export default function LandingPage() {
           />
         </div>
 
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -212,13 +211,15 @@ export default function LandingPage() {
           <TerminalShowcase />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
           className="mt-12 flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400"
         >
-          <span className="flex items-center gap-2">Powered by <span className="text-gray-600">Yjs</span></span>
+          <span className="flex items-center gap-2">
+            Powered by <span className="text-gray-600">Yjs</span>
+          </span>
           <span className="w-1 h-1 bg-gray-200 rounded-full my-auto" />
           <span className="text-gray-600">IndexedDB</span>
           <span className="w-1 h-1 bg-gray-200 rounded-full my-auto" />

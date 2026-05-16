@@ -46,7 +46,7 @@ const plans = [
     ],
     cta: "Contact Sales",
     highlight: false,
-  }
+  },
 ];
 
 export default function PricingPage() {
@@ -59,7 +59,10 @@ export default function PricingPage() {
             <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
             <span className="font-bold text-xl">ZerithDB</span>
           </Link>
-          <Link href="/" className="text-sm font-medium text-gray-600 hover:text-black flex items-center gap-2">
+          <Link
+            href="/"
+            className="text-sm font-medium text-gray-600 hover:text-black flex items-center gap-2"
+          >
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
         </div>
@@ -72,7 +75,9 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Simple, transparent pricing</h1>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+              Simple, transparent pricing
+            </h1>
             <p className="text-xl text-gray-500 max-w-2xl mx-auto">
               Choose the plan that fits your needs. ZerithDB is open source and free to start.
             </p>
@@ -86,8 +91,8 @@ export default function PricingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 className={`p-8 rounded-3xl border ${
-                  plan.highlight 
-                    ? "border-blue-600 shadow-xl shadow-blue-500/10 relative" 
+                  plan.highlight
+                    ? "border-blue-600 shadow-xl shadow-blue-500/10 relative"
                     : "border-gray-100 shadow-sm"
                 }`}
               >
@@ -102,12 +107,14 @@ export default function PricingPage() {
                   {plan.price !== "Custom" && <span className="text-gray-500">/mo</span>}
                 </div>
                 <p className="text-gray-500 mb-8">{plan.description}</p>
-                
-                <button className={`w-full py-3 rounded-xl font-medium mb-8 transition-all ${
-                  plan.highlight 
-                    ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20" 
-                    : "bg-gray-50 text-gray-900 hover:bg-gray-100"
-                }`}>
+
+                <button
+                  className={`w-full py-3 rounded-xl font-medium mb-8 transition-all ${
+                    plan.highlight
+                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20"
+                      : "bg-gray-50 text-gray-900 hover:bg-gray-100"
+                  }`}
+                >
                   {plan.cta}
                 </button>
 

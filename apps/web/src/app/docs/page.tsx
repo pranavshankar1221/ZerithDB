@@ -228,24 +228,32 @@ const DOC_CONTENT: Record<string, React.ReactNode> = {
   "Conflict Resolution": (
     <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
       <p>
-        ZerithDB ensures all peers eventually converge to the same state using <strong>Last-Write-Wins (LWW)</strong> and <strong>Causal Ordering</strong> via vector clocks.
+        ZerithDB ensures all peers eventually converge to the same state using{" "}
+        <strong>Last-Write-Wins (LWW)</strong> and <strong>Causal Ordering</strong> via vector
+        clocks.
       </p>
       <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-4">The Resolver Algorithm</h3>
       <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 font-mono text-sm text-blue-400">
-        {"// Internal resolution logic\nif (incoming.timestamp > local.timestamp) {\n  applyUpdate(incoming);\n} else if (incoming.timestamp === local.timestamp) {\n  // Deterministic tie-break using peer IDs\n  if (incoming.peerId > local.peerId) applyUpdate(incoming);\n}"}
+        {
+          "// Internal resolution logic\nif (incoming.timestamp > local.timestamp) {\n  applyUpdate(incoming);\n} else if (incoming.timestamp === local.timestamp) {\n  // Deterministic tie-break using peer IDs\n  if (incoming.peerId > local.peerId) applyUpdate(incoming);\n}"
+        }
       </div>
       <p>
-        This ensures that no matter what order updates arrive in, every client will compute the exact same final state without needing a central coordinator.
+        This ensures that no matter what order updates arrive in, every client will compute the
+        exact same final state without needing a central coordinator.
       </p>
     </div>
   ),
   "Client Configuration": (
     <div className="space-y-6 text-gray-600 leading-relaxed text-lg">
       <p>
-        The <code>createClient</code> function accepts a configuration object to tune your P2P and storage settings.
+        The <code>createClient</code> function accepts a configuration object to tune your P2P and
+        storage settings.
       </p>
       <div className="bg-gray-900 p-6 rounded-xl border border-gray-800 font-mono text-sm text-gray-300">
-        {"const db = createClient({\n  appId: 'project-xyz',\n  storage: 'indexeddb', // or 'memory'\n  sync: {\n    p2p: true,\n    rtcConfig: { iceServers: [...] }\n  }\n});"}
+        {
+          "const db = createClient({\n  appId: 'project-xyz',\n  storage: 'indexeddb', // or 'memory'\n  sync: {\n    p2p: true,\n    rtcConfig: { iceServers: [...] }\n  }\n});"
+        }
       </div>
     </div>
   ),

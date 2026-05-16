@@ -52,7 +52,9 @@ export default function ProjectShowcase() {
               whileHover={{ y: -8 }}
               className="group bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all"
             >
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.gradient} mb-6 flex items-center justify-center text-white shadow-lg shadow-blue-500/10`}>
+              <div
+                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${p.gradient} mb-6 flex items-center justify-center text-white shadow-lg shadow-blue-500/10`}
+              >
                 <Code2 className="w-8 h-8" />
               </div>
               <div className="flex items-center justify-between mb-3">
@@ -61,12 +63,13 @@ export default function ProjectShowcase() {
                   <Star className="w-4 h-4 fill-current" /> {p.stars}
                 </div>
               </div>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                {p.desc}
-              </p>
+              <p className="text-gray-500 leading-relaxed mb-6">{p.desc}</p>
               <div className="flex flex-wrap gap-2">
-                {p.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100">
+                {p.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 bg-gray-50 text-gray-500 text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100"
+                  >
                     {tag}
                   </span>
                 ))}
