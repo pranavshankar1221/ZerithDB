@@ -11,7 +11,6 @@ import {
   CheckCircle,
   Terminal,
   FileCode,
-  Star,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import CodeWalkthrough from "@/components/CodeWalkthrough";

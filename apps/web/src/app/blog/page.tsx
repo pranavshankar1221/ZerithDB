@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, BookOpen, Clock, User } from "lucide-react";
+import { ArrowLeft, Clock, User } from "lucide-react";
 import Footer from "@/components/Footer";
 
 const blogPosts = [

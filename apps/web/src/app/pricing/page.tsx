@@ -2,7 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, Zap } from "lucide-react";
+import {
+  ArrowLeft,
+  Check,
+  Zap,
+} from "lucide-react";
 import Footer from "@/components/Footer";
 
 const plans = [
