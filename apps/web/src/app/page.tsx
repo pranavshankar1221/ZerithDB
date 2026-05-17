@@ -154,23 +154,73 @@ export default function LandingPage() {
       </header>
 
       {/* ── 1. HERO SECTION ── */}
-      <section className="relative pt-32 pb-20 px-6 max-w-6xl mx-auto text-center">
+      <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
+        {/* Background Decorations */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none overflow-visible">
+          {/* Subtle Dot Grid Pattern */}
+          <div
+            className="absolute inset-0 opacity-[0.15]"
+            style={{
+              backgroundImage: `radial-gradient(#cbd5e1 1px, transparent 1px)`,
+              backgroundSize: "24px 24px",
+            }}
+          />
+
+          {/* Blurred Background Glows */}
           <motion.div
             animate={{
               y: [0, -20, 0],
-              opacity: [0.3, 0.5, 0.3],
+              opacity: [0.3, 0.4, 0.3],
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-20 -left-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl"
+            className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[100px]"
           />
           <motion.div
             animate={{
               y: [0, 20, 0],
-              opacity: [0.2, 0.4, 0.2],
+              opacity: [0.2, 0.3, 0.2],
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-40 -right-20 w-80 h-80 bg-indigo-100 rounded-full blur-3xl"
+            className="absolute top-20 right-1/4 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[120px]"
+          />
+
+          {/* Central Glow behind text */}
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[80px]" />
+
+          {/* Structured Decorative Elements - Moved closer for framing */}
+          {/* Left Abstract Shape - More animated & fluid */}
+          <motion.div
+            animate={{
+              y: [0, -25, 10, 0],
+              x: [0, 15, -10, 0],
+              scale: [1, 1.1, 0.95, 1],
+              rotate: [-15, 5, -25, -15],
+              borderRadius: ["2.5rem", "4rem", "2rem", "2.5rem"],
+            }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-[10%] left-[5%] w-40 h-40 bg-white/20 border border-blue-200/40 backdrop-blur-[12px] hidden xl:block shadow-[0_20px_50px_rgba(59,130,246,0.15)]"
+          />
+
+          {/* Right Abstract Shape - Reduced size and softened shadow */}
+          <motion.div
+            animate={{
+              y: [0, 20, -10, 0],
+              x: [0, -15, 10, 0],
+              scale: [1, 0.95, 1.05, 1],
+              rotate: [25, 40, 20, 25],
+              borderRadius: ["2.5rem", "4rem", "2rem", "2.5rem"],
+            }}
+            transition={{
+              duration: 15,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="absolute top-[38%] right-[5%] w-52 h-52 bg-white/10 border border-indigo-200/40 backdrop-blur-[6px] hidden xl:block shadow-[0_8px_30px_rgba(99,102,241,0.06)]"
           />
         </div>
 
@@ -679,9 +729,39 @@ export default function LandingPage() {
         className="py-32 px-6 bg-background text-center relative overflow-hidden transition-colors duration-300"
       >
         {/* Abstract shapes for CTA */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-black rounded-full rotate-45 animate-float" />
-          <div className="absolute bottom-10 right-10 w-48 h-48 border-2 border-black rounded-xl -rotate-12 animate-float-delayed" />
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          {/* Subtle Background Glow for CTA */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[100px] -z-10" />
+
+          <motion.div
+            animate={{
+              y: [0, -20, 15, 0],
+              x: [0, 10, -15, 0],
+              rotate: [12, 28, 5, 12],
+              borderRadius: ["2rem", "3.5rem", "1.5rem", "2rem"],
+            }}
+            transition={{
+              duration: 14,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-12 left-[12%] w-36 h-36 bg-white/15 border border-blue-200/30 backdrop-blur-[10px] hidden md:block shadow-[0_15px_35px_rgba(0,0,0,0.08)]"
+          />
+          <motion.div
+            animate={{
+              y: [0, 20, -15, 0],
+              x: [0, -10, 8, 0],
+              rotate: [-20, -30, -15, -20],
+              borderRadius: ["3rem", "4rem", "2rem", "3rem"],
+            }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+            className="absolute bottom-12 right-[15%] w-48 h-48 bg-white/5 border border-gray-200/40 backdrop-blur-[5px] hidden md:block shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
+          />
         </div>
 
         <motion.div
@@ -736,7 +816,59 @@ export default function LandingPage() {
       </section>
 
       {/* ── 9. FOOTER ── */}
-      <Footer />
+      <footer className="border-t border-border py-12 px-6 bg-background transition-colors duration-300">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img src="/logo.svg" alt="ZerithDB Logo" className="w-full h-full" />
+            </div>
+            <span className="font-semibold text-foreground text-lg">ZerithDB</span>
+          </div>
+
+          <div className="flex items-center gap-6 text-sm text-muted-foreground font-medium">
+            <Link href="/docs" className="hover:text-foreground transition-colors">
+              Documentation
+            </Link>
+            <a
+              href="https://github.com/Zerith-Labs/ZerithDB"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+            <Link
+              href="/"
+              onClick={() => toast("Blog will be available soon")}
+              className="hover:text-foreground transition-colors cursor-pointer"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/"
+              onClick={() => toast("Pricing will be available soon")}
+              className="hover:text-foreground transition-colors cursor-pointer"
+            >
+              Pricing
+            </Link>
+           
+
+            <a
+              href="https://discord.gg/MhvuDvzWfF"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+
+              Discord
+            </a>
+          </div>
+
+          <div className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} ZerithDB. Open Source.
+          </div>
+        </div>
+      </footer>
       <SocialGraph />
     </main>
   );

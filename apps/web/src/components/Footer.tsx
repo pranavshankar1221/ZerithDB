@@ -18,9 +18,9 @@ const ArrowUpRight = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const GithubIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
     className="w-5 h-5"
     {...props}
   >
@@ -29,9 +29,9 @@ const GithubIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const DiscordIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
     className="w-5 h-5"
     {...props}
   >
@@ -40,9 +40,9 @@ const DiscordIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const XIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
     className="w-5 h-5"
     {...props}
   >
@@ -96,10 +96,10 @@ const socialLinks: {
   href: string;
   icon: IconType;
 }[] = [
-  { name: "GitHub", href: "https://github.com/Zerith-Labs/ZerithDB", icon: GithubIcon },
-  { name: "Discord", href: "#", icon: DiscordIcon },
-  { name: "X", href: "#", icon: XIcon },
-];
+    { name: "GitHub", href: "https://github.com/Zerith-Labs/ZerithDB", icon: GithubIcon },
+    { name: "Discord", href: "#", icon: DiscordIcon },
+    { name: "X", href: "#", icon: XIcon },
+  ];
 
 export default function Footer() {
   return (
