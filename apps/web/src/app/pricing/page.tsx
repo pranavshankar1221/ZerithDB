@@ -33,7 +33,7 @@ const plans = [
       "Advanced CRDT Tools",
       "Priority Email Support",
       "Custom Schemas",
-    ],
+    ], 
     cta: "Get Started",
     highlight: true,
   },
@@ -63,11 +63,13 @@ export default function PricingPage() {
             <img src="/logo.svg" alt="Logo" className="w-8 h-8" />
             <span className="font-bold text-xl">ZerithDB</span>
           </Link>
+
           <Link
             href="/"
             className="text-sm font-medium text-gray-600 hover:text-black flex items-center gap-2"
           >
-            <ArrowLeft className="w-4 h-4" /> Back to Home
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
           </Link>
         </div>
       </header>
@@ -82,6 +84,7 @@ export default function PricingPage() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
               Simple, transparent pricing
             </h1>
+
             <p className="text-xl text-gray-500 max-w-2xl mx-auto">
               Choose the plan that fits your needs. ZerithDB is open source and free to start.
             </p>
@@ -102,15 +105,24 @@ export default function PricingPage() {
               >
                 {plan.highlight && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-blue-600 text-white text-xs font-bold rounded-full flex items-center gap-1">
-                    <Zap className="w-3 h-3 fill-current" /> Most Popular
+                    <Zap className="w-3 h-3 fill-current" />
+                    Most Popular
                   </div>
                 )}
+
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+
                 <div className="flex items-baseline gap-1 mb-4">
                   <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-gray-500">/mo</span>}
+
+                  {plan.price !== "Custom" && (
+                    <span className="text-gray-500">/mo</span>
+                  )}
                 </div>
-                <p className="text-gray-500 mb-8">{plan.description}</p>
+
+                <p className="text-gray-500 mb-8">
+                  {plan.description}
+                </p>
 
                 <button
                   className={`w-full py-3 rounded-xl font-medium mb-8 transition-all ${
@@ -124,7 +136,10 @@ export default function PricingPage() {
 
                 <ul className="space-y-4">
                   {plan.features.map((feature, j) => (
-                    <li key={j} className="flex items-center gap-3 text-sm text-gray-600">
+                    <li
+                      key={j}
+                      className="flex items-center gap-3 text-sm text-gray-600"
+                    >
                       <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
                       {feature}
                     </li>
